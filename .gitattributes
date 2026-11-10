@@ -1,0 +1,4 @@
+*.csv -text
+rules.md -text
+ingest.py -text
+report.html -text

@@ -1,0 +1,283 @@
+============================= test session starts =============================
+platform win32 -- Python 3.14.5, pytest-8.4.2, pluggy-1.7.0 -- C:\Users\Admin\workspace\language-of-computation\week4-assignment\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\Admin\workspace\language-of-computation\week4-assignment
+collecting ... collected 38 items
+
+test_ingest.py::test_example[example_01] FAILED                          [  2%]
+test_ingest.py::test_example[example_02] FAILED                          [  5%]
+test_ingest.py::test_example[example_03] FAILED                          [  7%]
+test_ingest.py::test_example[example_04] FAILED                          [ 10%]
+test_ingest.py::test_example[example_05] FAILED                          [ 13%]
+test_ingest.py::test_example[example_06] FAILED                          [ 15%]
+test_ingest.py::test_example[example_07] FAILED                          [ 18%]
+test_ingest.py::test_example[example_08] FAILED                          [ 21%]
+test_ingest.py::test_example[example_09] FAILED                          [ 23%]
+test_ingest.py::test_example[example_10] FAILED                          [ 26%]
+test_ingest.py::test_example[example_11] FAILED                          [ 28%]
+test_ingest.py::test_example[example_12] FAILED                          [ 31%]
+test_ingest.py::test_example[example_13] FAILED                          [ 34%]
+test_ingest.py::test_example[example_14] FAILED                          [ 36%]
+test_ingest.py::test_example[example_16] FAILED                          [ 39%]
+test_ingest.py::test_example[example_17] FAILED                          [ 42%]
+test_ingest.py::test_example[example_18] FAILED                          [ 44%]
+test_ingest.py::test_example[example_19] FAILED                          [ 47%]
+test_ingest.py::test_example[example_20] FAILED                          [ 50%]
+test_ingest.py::test_example[example_21] FAILED                          [ 52%]
+test_ingest.py::test_example_15_blank_pair_rejected_even_for_known_supplier FAILED [ 55%]
+test_ingest.py::test_example_22_identical_repeat_is_skipped PASSED       [ 57%]
+test_ingest.py::test_real_file_twice_has_no_duplicate_books[books.csv] PASSED [ 60%]
+test_ingest.py::test_real_file_twice_has_no_duplicate_books[books-batch2.csv] PASSED [ 63%]
+test_ingest.py::test_log_adds_runs_without_overwriting PASSED            [ 65%]
+test_ingest.py::test_outcome_totals_equal_rows_read[books.csv] PASSED    [ 68%]
+test_ingest.py::test_outcome_totals_equal_rows_read[books-batch2.csv] PASSED [ 71%]
+test_ingest.py::test_two_empty_databases_give_same_catalog[books.csv] PASSED [ 73%]
+test_ingest.py::test_two_empty_databases_give_same_catalog[books-batch2.csv] PASSED [ 76%]
+test_ingest.py::test_changed_nonblank_value_updates_and_blank_does_not_erase PASSED [ 78%]
+test_ingest.py::test_no_isbn_title_author_match_ignores_case_and_spaces FAILED [ 81%]
+test_ingest.py::test_no_isbn_placeholder_identity_is_rejected[title] FAILED [ 84%]
+test_ingest.py::test_no_isbn_placeholder_identity_is_rejected[authors] FAILED [ 86%]
+test_ingest.py::test_one_changed_title_warns_but_both_identity_fields_reject FAILED [ 89%]
+test_ingest.py::test_supplier_id_does_not_merge_different_isbns FAILED   [ 92%]
+test_ingest.py::test_broken_second_file_rolls_back_entire_run FAILED     [ 94%]
+test_ingest.py::test_missing_header_fails_the_file FAILED                [ 97%]
+test_ingest.py::test_unreadable_log_preserves_catalog PASSED             [100%]
+
+================================== FAILURES ===================================
+__________________________ test_example[example_01] ___________________________
+test_ingest.py:171: in test_example
+    assert 'isbn' in stored[0], 'Database must store the repaired isbn column too'
+E   AssertionError: Database must store the repaired isbn column too
+E   assert 'isbn' in {'authors': 'Example author', 'average_rating': '4.0', 'best_book_id': '', 'books_count': '1', ...}
+__________________________ test_example[example_02] ___________________________
+test_ingest.py:163: in test_example
+    assert repairs(r) == repair_count
+E   AssertionError: assert 0 == 1
+E    +  where 0 = repairs({'changes': {}, 'interpreted': {'isbn': '043965548X', 'isbn13': None}, 'next_action': 'Review noted ISBN assumptions or missing values with supplier; confirm possible duplicates if flagged.', 'outcome': 'loaded', ...})
+__________________________ test_example[example_03] ___________________________
+test_ingest.py:164: in test_example
+    assert len(r['warnings']) == warning_count
+E   AssertionError: assert 1 == 0
+E    +  where 1 = len(['isbn: ISBN presentation repaired'])
+__________________________ test_example[example_04] ___________________________
+test_ingest.py:164: in test_example
+    assert len(r['warnings']) == warning_count
+E   AssertionError: assert 1 == 0
+E    +  where 1 = len(['isbn: ISBN presentation repaired'])
+__________________________ test_example[example_05] ___________________________
+test_ingest.py:164: in test_example
+    assert len(r['warnings']) == warning_count
+E   AssertionError: assert 1 == 0
+E    +  where 1 = len(['isbn: ISBN presentation repaired'])
+__________________________ test_example[example_06] ___________________________
+test_ingest.py:163: in test_example
+    assert repairs(r) == repair_count
+E   AssertionError: assert 1 == 2
+E    +  where 1 = repairs({'changes': {}, 'interpreted': {'isbn': '0439023483', 'isbn13': None}, 'next_action': 'Review noted ISBN assumptions or missing values with supplier; confirm possible duplicates if flagged.', 'outcome': 'loaded', ...})
+__________________________ test_example[example_07] ___________________________
+test_ingest.py:164: in test_example
+    assert len(r['warnings']) == warning_count
+E   AssertionError: assert 2 == 0
+E    +  where 2 = len(['isbn: Assumed missing leading zeros', 'isbn13: Numeric notation repaired; earlier rounding may have lost information'])
+__________________________ test_example[example_08] ___________________________
+test_ingest.py:163: in test_example
+    assert repairs(r) == repair_count
+E   AssertionError: assert 1 == 2
+E    +  where 1 = repairs({'changes': {}, 'interpreted': {'isbn': '0439023483', 'isbn13': '9780439023480'}, 'next_action': 'Review noted ISBN assumptions or missing values with supplier; confirm possible duplicates if flagged.', 'outcome': 'loaded', ...})
+__________________________ test_example[example_09] ___________________________
+test_ingest.py:164: in test_example
+    assert len(r['warnings']) == warning_count
+E   AssertionError: assert 2 == 1
+E    +  where 2 = len(['isbn: Missing ISBN', 'isbn13: Expanded numeric value fails ISBN validation'])
+__________________________ test_example[example_10] ___________________________
+test_ingest.py:164: in test_example
+    assert len(r['warnings']) == warning_count
+E   AssertionError: assert 2 == 1
+E    +  where 2 = len(['isbn: Missing ISBN', 'isbn13: Expanded numeric value fails ISBN validation'])
+__________________________ test_example[example_11] ___________________________
+test_ingest.py:163: in test_example
+    assert repairs(r) == repair_count
+E   AssertionError: assert 1 == 0
+E    +  where 1 = repairs({'changes': {}, 'interpreted': {'isbn': None, 'isbn13': '9780439139601'}, 'next_action': 'Review noted ISBN assumptions or missing values with supplier; confirm possible duplicates if flagged.', 'outcome': 'loaded', ...})
+__________________________ test_example[example_12] ___________________________
+test_ingest.py:162: in test_example
+    r = outcome(run, 'rejected' if action else 'loaded')
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+test_ingest.py:127: in outcome
+    assert rows[0]['outcome'] == expected, rows[0]
+E   AssertionError: {'changes': {}, 'interpreted': {'isbn': '04390A3483', 'isbn13': None}, 'next_action': 'Review noted ISBN assumptions or missing values with supplier; confirm possible duplicates if flagged.', 'outcome': 'loaded', ...}
+E   assert 'loaded' == 'rejected'
+E     
+E     - rejected
+E     + loaded
+__________________________ test_example[example_13] ___________________________
+test_ingest.py:162: in test_example
+    r = outcome(run, 'rejected' if action else 'loaded')
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+test_ingest.py:127: in outcome
+    assert rows[0]['outcome'] == expected, rows[0]
+E   AssertionError: {'changes': {}, 'interpreted': {'isbn': '15287463097', 'isbn13': None}, 'next_action': 'Review noted ISBN assumptions or missing values with supplier; confirm possible duplicates if flagged.', 'outcome': 'loaded', ...}
+E   assert 'loaded' == 'rejected'
+E     
+E     - rejected
+E     + loaded
+__________________________ test_example[example_14] ___________________________
+test_ingest.py:162: in test_example
+    r = outcome(run, 'rejected' if action else 'loaded')
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+test_ingest.py:127: in outcome
+    assert rows[0]['outcome'] == expected, rows[0]
+E   AssertionError: {'changes': {}, 'interpreted': {'isbn': '1854433017', 'isbn13': None}, 'next_action': 'Review noted ISBN assumptions or missing values with supplier; confirm possible duplicates if flagged.', 'outcome': 'loaded', ...}
+E   assert 'loaded' == 'rejected'
+E     
+E     - rejected
+E     + loaded
+__________________________ test_example[example_16] ___________________________
+test_ingest.py:168: in test_example
+    assert r['next_action'] == action
+E   AssertionError: assert 'Confirm ISBN...ors if noted.' == 'Check which ...k is correct.'
+E     
+E     - Check which value or book is correct.
+E     + Confirm ISBN/edition and supplier ID with supplier; supply missing title or authors if noted.
+__________________________ test_example[example_17] ___________________________
+test_ingest.py:163: in test_example
+    assert repairs(r) == repair_count
+E   AssertionError: assert 0 == 2
+E    +  where 0 = repairs({'changes': {}, 'interpreted': {'isbn': '9781982147600', 'isbn13': None}, 'next_action': 'Review noted ISBN assumptions or missing values with supplier; confirm possible duplicates if flagged.', 'outcome': 'loaded', ...})
+__________________________ test_example[example_18] ___________________________
+test_ingest.py:164: in test_example
+    assert len(r['warnings']) == warning_count
+E   AssertionError: assert 1 == 0
+E    +  where 1 = len(['isbn: Missing ISBN'])
+__________________________ test_example[example_19] ___________________________
+test_ingest.py:162: in test_example
+    r = outcome(run, 'rejected' if action else 'loaded')
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+test_ingest.py:127: in outcome
+    assert rows[0]['outcome'] == expected, rows[0]
+E   AssertionError: {'changes': {}, 'interpreted': {'isbn': '0439139600', 'isbn13': '9780061120085'}, 'next_action': 'Review noted ISBN assumptions or missing values with supplier; confirm possible duplicates if flagged.', 'outcome': 'loaded', ...}
+E   assert 'loaded' == 'rejected'
+E     
+E     - rejected
+E     + loaded
+__________________________ test_example[example_20] ___________________________
+test_ingest.py:171: in test_example
+    assert 'isbn' in stored[0], 'Database must store the repaired isbn column too'
+E   AssertionError: Database must store the repaired isbn column too
+E   assert 'isbn' in {'authors': 'Example author', 'average_rating': '4.0', 'best_book_id': '', 'books_count': '1', ...}
+__________________________ test_example[example_21] ___________________________
+test_ingest.py:162: in test_example
+    r = outcome(run, 'rejected' if action else 'loaded')
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+test_ingest.py:127: in outcome
+    assert rows[0]['outcome'] == expected, rows[0]
+E   AssertionError: {'changes': {}, 'interpreted': {'isbn': '9780439139601', 'isbn13': '9780439139600'}, 'next_action': 'Review noted ISBN assumptions or missing values with supplier; confirm possible duplicates if flagged.', 'outcome': 'loaded', ...}
+E   assert 'loaded' == 'rejected'
+E     
+E     - rejected
+E     + loaded
+_________ test_example_15_blank_pair_rejected_even_for_known_supplier _________
+test_ingest.py:180: in test_example_15_blank_pair_rejected_even_for_known_supplier
+    r = outcome(h.run(h.input([book('','')])), 'rejected')
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+test_ingest.py:127: in outcome
+    assert rows[0]['outcome'] == expected, rows[0]
+E   AssertionError: {'changes': {}, 'interpreted': {'isbn': None, 'isbn13': None}, 'next_action': 'Review noted ISBN assumptions or missing values with supplier; confirm possible duplicates if flagged.', 'outcome': 'skipped', ...}
+E   assert 'skipped' == 'rejected'
+E     
+E     - rejected
+E     + skipped
+___________ test_no_isbn_title_author_match_ignores_case_and_spaces ___________
+test_ingest.py:254: in test_no_isbn_title_author_match_ignores_case_and_spaces
+    assert len(h.books()) == 1 and len(r['warnings']) == 1
+E   AssertionError: assert (1 == 1 and 2 == 1)
+E    +  where 1 = len([{'authors': 'Example author', 'average_rating': '4.0', 'best_book_id': '', 'books_count': '1', ...}])
+E    +    where [{'authors': 'Example author', 'average_rating': '4.0', 'best_book_id': '', 'books_count': '1', ...}] = books()
+E    +      where books = <test_ingest.Harness object at 0x000001EFEC90FB60>.books
+E    +  and   2 = len(['isbn: Missing ISBN', 'isbn13: Wrong length (or short ISBN failed zero-padding check)'])
+____________ test_no_isbn_placeholder_identity_is_rejected[title] _____________
+test_ingest.py:260: in test_no_isbn_placeholder_identity_is_rejected
+    r = outcome(h.run(h.input([book('','12345', **{field:' Unknown '})])), 'rejected')
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+test_ingest.py:127: in outcome
+    assert rows[0]['outcome'] == expected, rows[0]
+E   AssertionError: {'changes': {}, 'interpreted': {'isbn': None, 'isbn13': '12345'}, 'next_action': 'Review noted ISBN assumptions or missing values with supplier; confirm possible duplicates if flagged.', 'outcome': 'loaded', ...}
+E   assert 'loaded' == 'rejected'
+E     
+E     - rejected
+E     + loaded
+___________ test_no_isbn_placeholder_identity_is_rejected[authors] ____________
+test_ingest.py:260: in test_no_isbn_placeholder_identity_is_rejected
+    r = outcome(h.run(h.input([book('','12345', **{field:' Unknown '})])), 'rejected')
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+test_ingest.py:127: in outcome
+    assert rows[0]['outcome'] == expected, rows[0]
+E   AssertionError: {'changes': {}, 'interpreted': {'isbn': None, 'isbn13': '12345'}, 'next_action': 'Review noted ISBN assumptions or missing values with supplier; confirm possible duplicates if flagged.', 'outcome': 'loaded', ...}
+E   assert 'loaded' == 'rejected'
+E     
+E     - rejected
+E     + loaded
+________ test_one_changed_title_warns_but_both_identity_fields_reject _________
+test_ingest.py:267: in test_one_changed_title_warns_but_both_identity_fields_reject
+    r = outcome(h.run(h.input([book(title='A changed title')])), 'updated')
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+test_ingest.py:127: in outcome
+    assert rows[0]['outcome'] == expected, rows[0]
+E   AssertionError: {'changes': {}, 'interpreted': {'isbn': '0439139600', 'isbn13': '9780439139601'}, 'next_action': 'Confirm ISBN/edition and supplier ID with supplier; supply missing title or authors if noted.', 'outcome': 'rejected', ...}
+E   assert 'rejected' == 'updated'
+E     
+E     - updated
+E     + rejected
+_______________ test_supplier_id_does_not_merge_different_isbns _______________
+test_ingest.py:278: in test_supplier_id_does_not_merge_different_isbns
+    r = outcome(h.run(h.input([book('0439554934','9780439554930',title='Another book')])), 'loaded')
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+test_ingest.py:127: in outcome
+    assert rows[0]['outcome'] == expected, rows[0]
+E   AssertionError: {'changes': {}, 'interpreted': {'isbn': '0439554934', 'isbn13': '9780439554930'}, 'next_action': 'Confirm ISBN/edition and supplier ID with supplier; supply missing title or authors if noted.', 'outcome': 'rejected', ...}
+E   assert 'rejected' == 'loaded'
+E     
+E     - loaded
+E     + rejected
+________________ test_broken_second_file_rolls_back_entire_run ________________
+test_ingest.py:291: in test_broken_second_file_rolls_back_entire_run
+    assert all(r['next_action'] == FILE_ACTION for r in details(run))
+E   assert False
+E    +  where False = all(<generator object test_broken_second_file_rolls_back_entire_run.<locals>.<genexpr> at 0x000001EFEC9D3370>)
+_____________________ test_missing_header_fails_the_file ______________________
+test_ingest.py:299: in test_missing_header_fails_the_file
+    assert run['status'] == 'failed' and h.books() == []
+E   AssertionError: assert ('completed' == 'failed'
+E     
+E     - failed
+E     + completed)
+=========================== short test summary info ===========================
+FAILED test_ingest.py::test_example[example_01] - AssertionError: Database mu...
+FAILED test_ingest.py::test_example[example_02] - AssertionError: assert 0 == 1
+FAILED test_ingest.py::test_example[example_03] - AssertionError: assert 1 == 0
+FAILED test_ingest.py::test_example[example_04] - AssertionError: assert 1 == 0
+FAILED test_ingest.py::test_example[example_05] - AssertionError: assert 1 == 0
+FAILED test_ingest.py::test_example[example_06] - AssertionError: assert 1 == 2
+FAILED test_ingest.py::test_example[example_07] - AssertionError: assert 2 == 0
+FAILED test_ingest.py::test_example[example_08] - AssertionError: assert 1 == 2
+FAILED test_ingest.py::test_example[example_09] - AssertionError: assert 2 == 1
+FAILED test_ingest.py::test_example[example_10] - AssertionError: assert 2 == 1
+FAILED test_ingest.py::test_example[example_11] - AssertionError: assert 1 == 0
+FAILED test_ingest.py::test_example[example_12] - AssertionError: {'changes':...
+FAILED test_ingest.py::test_example[example_13] - AssertionError: {'changes':...
+FAILED test_ingest.py::test_example[example_14] - AssertionError: {'changes':...
+FAILED test_ingest.py::test_example[example_16] - AssertionError: assert 'Con...
+FAILED test_ingest.py::test_example[example_17] - AssertionError: assert 0 == 2
+FAILED test_ingest.py::test_example[example_18] - AssertionError: assert 1 == 0
+FAILED test_ingest.py::test_example[example_19] - AssertionError: {'changes':...
+FAILED test_ingest.py::test_example[example_20] - AssertionError: Database mu...
+FAILED test_ingest.py::test_example[example_21] - AssertionError: {'changes':...
+FAILED test_ingest.py::test_example_15_blank_pair_rejected_even_for_known_supplier
+FAILED test_ingest.py::test_no_isbn_title_author_match_ignores_case_and_spaces
+FAILED test_ingest.py::test_no_isbn_placeholder_identity_is_rejected[title]
+FAILED test_ingest.py::test_no_isbn_placeholder_identity_is_rejected[authors]
+FAILED test_ingest.py::test_one_changed_title_warns_but_both_identity_fields_reject
+FAILED test_ingest.py::test_supplier_id_does_not_merge_different_isbns - Asse...
+FAILED test_ingest.py::test_broken_second_file_rolls_back_entire_run - assert...
+FAILED test_ingest.py::test_missing_header_fails_the_file - AssertionError: a...
+======================= 28 failed, 10 passed in 17.70s ========================

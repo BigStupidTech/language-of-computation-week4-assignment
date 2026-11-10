@@ -1,0 +1,46 @@
+============================= test session starts =============================
+platform win32 -- Python 3.14.5, pytest-8.4.2, pluggy-1.7.0 -- C:\Users\Admin\workspace\language-of-computation\week4-assignment\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\Admin\workspace\language-of-computation\week4-assignment
+collecting ... collected 38 items
+
+test_ingest.py::test_example[example_01] PASSED                          [  2%]
+test_ingest.py::test_example[example_02] PASSED                          [  5%]
+test_ingest.py::test_example[example_03] PASSED                          [  7%]
+test_ingest.py::test_example[example_04] PASSED                          [ 10%]
+test_ingest.py::test_example[example_05] PASSED                          [ 13%]
+test_ingest.py::test_example[example_06] PASSED                          [ 15%]
+test_ingest.py::test_example[example_07] PASSED                          [ 18%]
+test_ingest.py::test_example[example_08] PASSED                          [ 21%]
+test_ingest.py::test_example[example_09] PASSED                          [ 23%]
+test_ingest.py::test_example[example_10] PASSED                          [ 26%]
+test_ingest.py::test_example[example_11] PASSED                          [ 28%]
+test_ingest.py::test_example[example_12] PASSED                          [ 31%]
+test_ingest.py::test_example[example_13] PASSED                          [ 34%]
+test_ingest.py::test_example[example_14] PASSED                          [ 36%]
+test_ingest.py::test_example[example_16] PASSED                          [ 39%]
+test_ingest.py::test_example[example_17] PASSED                          [ 42%]
+test_ingest.py::test_example[example_18] PASSED                          [ 44%]
+test_ingest.py::test_example[example_19] PASSED                          [ 47%]
+test_ingest.py::test_example[example_20] PASSED                          [ 50%]
+test_ingest.py::test_example[example_21] PASSED                          [ 52%]
+test_ingest.py::test_example_15_blank_pair_rejected_even_for_known_supplier PASSED [ 55%]
+test_ingest.py::test_example_22_identical_repeat_is_skipped PASSED       [ 57%]
+test_ingest.py::test_real_file_twice_has_no_duplicate_books[books.csv] PASSED [ 60%]
+test_ingest.py::test_real_file_twice_has_no_duplicate_books[books-batch2.csv] PASSED [ 63%]
+test_ingest.py::test_log_adds_runs_without_overwriting PASSED            [ 65%]
+test_ingest.py::test_outcome_totals_equal_rows_read[books.csv] PASSED    [ 68%]
+test_ingest.py::test_outcome_totals_equal_rows_read[books-batch2.csv] PASSED [ 71%]
+test_ingest.py::test_two_empty_databases_give_same_catalog[books.csv] PASSED [ 73%]
+test_ingest.py::test_two_empty_databases_give_same_catalog[books-batch2.csv] PASSED [ 76%]
+test_ingest.py::test_changed_nonblank_value_updates_and_blank_does_not_erase PASSED [ 78%]
+test_ingest.py::test_no_isbn_title_author_match_ignores_case_and_spaces PASSED [ 81%]
+test_ingest.py::test_no_isbn_placeholder_identity_is_rejected[title] PASSED [ 84%]
+test_ingest.py::test_no_isbn_placeholder_identity_is_rejected[authors] PASSED [ 86%]
+test_ingest.py::test_one_changed_title_warns_but_both_identity_fields_reject PASSED [ 89%]
+test_ingest.py::test_supplier_id_does_not_merge_different_isbns PASSED   [ 92%]
+test_ingest.py::test_broken_second_file_rolls_back_entire_run PASSED     [ 94%]
+test_ingest.py::test_missing_header_fails_the_file PASSED                [ 97%]
+test_ingest.py::test_unreadable_log_preserves_catalog PASSED             [100%]
+
+============================= 38 passed in 11.45s =============================
